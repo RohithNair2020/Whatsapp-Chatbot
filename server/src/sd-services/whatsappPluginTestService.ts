@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_cMZNs4yE8hRCGqRM(bh, parentSpanInst);
+          bh = await this.sd_uPhivdb0NIhrD4an(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -234,9 +234,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_cMZNs4yE8hRCGqRM(bh, parentSpanInst) {
+  async sd_uPhivdb0NIhrD4an(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_cMZNs4yE8hRCGqRM',
+      'sd_uPhivdb0NIhrD4an',
       parentSpanInst
     );
     try {
@@ -244,7 +244,7 @@ export class whatsappPluginTestService {
         'f66857f5-f768-fa72-2f70-2c9d069d52f6',
         'sd_xbGZ4uivBqNWybRv'
       );
-      const accessToken = configObj['accessToken'];
+      const accessToken = 'Bearer ' + process.env.accessToken;
       const phoneNumberID = configObj['phoneNumberID'];
       const webhookVersion = configObj['webhookVersion'];
       const sendMessage = async (to, message) => {
@@ -281,22 +281,22 @@ export class whatsappPluginTestService {
 
       if ('send_message' === 'send_message') {
         console.log('if reached');
-        sendMessage('919846312379', 'Working working');
+        sendMessage('919747497621', 'Working working');
       } else {
         console.log('receive');
       }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_cMZNs4yE8hRCGqRM
+      //appendnew_next_sd_uPhivdb0NIhrD4an
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_cMZNs4yE8hRCGqRM',
+        'sd_uPhivdb0NIhrD4an',
         spanInst,
-        'sd_cMZNs4yE8hRCGqRM'
+        'sd_uPhivdb0NIhrD4an'
       );
     }
   }

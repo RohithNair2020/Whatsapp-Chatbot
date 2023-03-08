@@ -6,25 +6,25 @@
             "viewType": "server",
             "nodeType": "flow",
             "name": "dummy config",
-            "accessToken": "Bearer EAARV7p7VptsBAAivyG5TNZAJBMy3sDxqqfeKPNEbPIHz5EQEiYYJ8ZBFW2nrW7Boo35dAyVZC5KtILkPYrpRWznLMZBqlIozxRyZAXUh8ZBGbqWZCbue6GMhWlJCMS6ZCvo5S7jbtpZC5zqAqVvPYWf7oiUNZAG5OqlZBT9kF4ZBJwVHOtJhhuDUi4fNxkrTkqXBhHZCZBNDBEi9Y9nwZDZD",
-            "phoneNumber": "+15550521393",
-            "phoneNumberID": "114961508202814",
+            "accessToken": "Bearer",
+            "phoneNumber": "+15550882623",
+            "phoneNumberID": "117158507969853",
             "webhookVersion": "v15.0",
             "category": "config",
             "__ssdTypeInputs__": {
                 "accessToken": {
                     "type": "str",
-                    "value": "Bearer EAARV7p7VptsBAAivyG5TNZAJBMy3sDxqqfeKPNEbPIHz5EQEiYYJ8ZBFW2nrW7Boo35dAyVZC5KtILkPYrpRWznLMZBqlIozxRyZAXUh8ZBGbqWZCbue6GMhWlJCMS6ZCvo5S7jbtpZC5zqAqVvPYWf7oiUNZAG5OqlZBT9kF4ZBJwVHOtJhhuDUi4fNxkrTkqXBhHZCZBNDBEi9Y9nwZDZD",
+                    "value": "Bearer",
                     "constant": false
                 },
                 "phoneNumber": {
                     "type": "str",
-                    "value": "+15550521393",
+                    "value": "+15550882623",
                     "constant": false
                 },
                 "phoneNumberID": {
                     "type": "str",
-                    "value": "114961508202814",
+                    "value": "117158507969853",
                     "constant": false
                 },
                 "webhookVersion": {
