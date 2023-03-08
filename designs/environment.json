@@ -32,7 +32,7 @@
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-            "accessToken": "EAAT2cYCAQboBADjO2dnzD6hSfiWU3Ir5fRZB4ZB9L9r6J0169tj0BezUCaZCs3vue9lsU2tNYCRAW5aUCk5NmD80KLnCCiPZCimFTMKhOgWSuTPs2IqyBUZCzdZBZBe3wxoDDmc3UWbQBPf5uRG6YrRaIyi2uY2Y8lyUFr44xeP5ld3s8H7kjZAwRnZBQjorQ08xVgbIfvCP8qQZDZD"
+            "accessToken": "EAAT2cYCAQboBADUR0bEVgUF99B9rmn0qdmLdNMxKZAGZCa4nry03ok03xe8CHAhV0EltdecCywBHs4L64rZBMd1vPKbm2ga0s5igFyy3ZBmvwfBF0Ror3xmHMJMWEtSmLCY7pVhx1Ajzic4VyZBcQ5hLufZAEp6EI2xr0jZAPya2NFVVYzkMrmoqFAqcDzZCfDA8ZBOHAibsZATwZDZD"
         }
     },
     "prod": {
@@ -50,7 +50,7 @@
             "webAppMountpoint": "web",
             "CLOCK_TOLERANCE": "5",
             "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
-            "accessToken": "EAAT2cYCAQboBADjO2dnzD6hSfiWU3Ir5fRZB4ZB9L9r6J0169tj0BezUCaZCs3vue9lsU2tNYCRAW5aUCk5NmD80KLnCCiPZCimFTMKhOgWSuTPs2IqyBUZCzdZBZBe3wxoDDmc3UWbQBPf5uRG6YrRaIyi2uY2Y8lyUFr44xeP5ld3s8H7kjZAwRnZBQjorQ08xVgbIfvCP8qQZDZD"
+            "accessToken": "EAAT2cYCAQboBADUR0bEVgUF99B9rmn0qdmLdNMxKZAGZCa4nry03ok03xe8CHAhV0EltdecCywBHs4L64rZBMd1vPKbm2ga0s5igFyy3ZBmvwfBF0Ror3xmHMJMWEtSmLCY7pVhx1Ajzic4VyZBcQ5hLufZAEp6EI2xr0jZAPya2NFVVYzkMrmoqFAqcDzZCfDA8ZBOHAibsZATwZDZD"
         }
     }
 }

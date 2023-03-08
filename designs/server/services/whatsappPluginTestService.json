@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_uPhivdb0NIhrD4an"
+                "sd_mjjcpdgxB2knmL9G"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -158,7 +158,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconsole.log(bh.input.input);",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(changes);",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
@@ -365,7 +365,7 @@
         "outputs": 1,
         "validateRequestUsingSwaggerDocs": false,
         "category": "HTTP",
-        "x": 120,
+        "x": 125,
         "y": 340,
         "wires": [
             [
@@ -396,7 +396,7 @@
         "script": "bh.local.response = bh.input.query[\"hub.challenge\"] || \"Invalid challenge value\";\n",
         "functionName": "sd_VL2NAipklb1DXkLA",
         "category": "Function",
-        "x": 245,
+        "x": 265,
         "y": 340,
         "wires": [
             [
@@ -452,7 +452,7 @@
         },
         "functionName": "sd_84LAoqQy6uYOlgRp",
         "category": "HTTP",
-        "x": 360,
+        "x": 405,
         "y": 340,
         "wires": [],
         "__n_excludedFromValidation__": {},
@@ -461,7 +461,7 @@
         "generated": true
     },
     {
-        "id": "sd_uPhivdb0NIhrD4an",
+        "id": "sd_mjjcpdgxB2knmL9G",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -471,7 +471,7 @@
         "action": "send_message",
         "to": "\"919747497621\"",
         "messageReceiveCallbackRoute": "\"\"",
-        "functionName": "sd_uPhivdb0NIhrD4an",
+        "functionName": "sd_mjjcpdgxB2knmL9G",
         "category": "Messaging",
         "x": 260,
         "y": 140,
@@ -493,7 +493,8 @@
             }
         },
         "__n_excludedFromValidation__": {
-            "messageReceiveCallbackRoute": true
+            "messageReceiveCallbackRoute": true,
+            "receivedMessage": true
         },
         "generateNext": false,
         "serviceName": "whatsappPluginTestService",
