@@ -281,7 +281,7 @@ export class whatsappPluginTestService {
 
       if ('send_message' === 'send_message') {
         console.log('if reached');
-        sendMessage('9846312379', 'Working working');
+        sendMessage('919846312379', 'Working working');
       } else {
         console.log('receive');
       }
