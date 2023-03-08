@@ -369,5 +369,132 @@
         "generateNext": false,
         "serviceName": "whatsappPluginTestService",
         "generated": true
+    },
+    {
+        "id": "sd_pSeuSUn3wYrZzrtf",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/callback",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 120,
+        "y": 340,
+        "wires": [
+            [
+                "sd_VL2NAipklb1DXkLA"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "whatsappPluginTestService",
+        "functionName": "sd_pSeuSUn3wYrZzrtf"
+    },
+    {
+        "id": "sd_VL2NAipklb1DXkLA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response = bh.input.query[\"hub.challenge\"] || \"Invalid challenge value\";\n",
+        "functionName": "sd_VL2NAipklb1DXkLA",
+        "category": "Function",
+        "x": 245,
+        "y": 340,
+        "wires": [
+            [
+                "sd_84LAoqQy6uYOlgRp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_84LAoqQy6uYOlgRp",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_84LAoqQy6uYOlgRp",
+        "category": "HTTP",
+        "x": 360,
+        "y": 340,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
     }
 ]

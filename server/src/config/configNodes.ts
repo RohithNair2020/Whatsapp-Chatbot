@@ -6,7 +6,7 @@ export default {
             "viewType": "server",
             "nodeType": "flow",
             "name": "dummy config",
-            "accessToken": "EAARV7p7VptsBAMVu7YenTZCJYn35Gaw7Y20HLdDmwZALQiBqv2FxZAZA6UjkVaJdoZBsVBdIkr16TQT6iWoASVK6jVaGLx9YxI5CDq5ZC762JJ2d1V3Ta52ZATZBidk4VUXev6kpc4BjAKE3VXKxY96or0zkeze5xnNae0LfQMC2GnxRr88apMEXZCB0B41WZCQ0bQtXwV0nwUsAZDZD",
+            "accessToken": "Bearer EAARV7p7VptsBADjXwF99Wg7RWNMdJae5qb7GZA9bswYuZBpeGGYxLklkSeo4TpXCHZCCQdBw9Qm5u9ZCoEQ6j2PZAb3iBrZAUZCnp7mU414xE3qZCBlIW8C73tQrZC9tvmxmlPmu5eUrLT1pOqAqZCRJbcZCGjC1XcRa8N6sv1MFbZBbdGW1sFcByOEHE0UZCeMmr22GbtakEDv0wOQZDZD",
             "phoneNumber": "+15550521393",
             "phoneNumberID": "114961508202814",
             "webhookVersion": "v15.0",
@@ -14,7 +14,7 @@ export default {
             "__ssdTypeInputs__": {
                 "accessToken": {
                     "type": "str",
-                    "value": "EAARV7p7VptsBAMVu7YenTZCJYn35Gaw7Y20HLdDmwZALQiBqv2FxZAZA6UjkVaJdoZBsVBdIkr16TQT6iWoASVK6jVaGLx9YxI5CDq5ZC762JJ2d1V3Ta52ZATZBidk4VUXev6kpc4BjAKE3VXKxY96or0zkeze5xnNae0LfQMC2GnxRr88apMEXZCB0B41WZCQ0bQtXwV0nwUsAZDZD",
+                    "value": "Bearer EAARV7p7VptsBADjXwF99Wg7RWNMdJae5qb7GZA9bswYuZBpeGGYxLklkSeo4TpXCHZCCQdBw9Qm5u9ZCoEQ6j2PZAb3iBrZAUZCnp7mU414xE3qZCBlIW8C73tQrZC9tvmxmlPmu5eUrLT1pOqAqZCRJbcZCGjC1XcRa8N6sv1MFbZBbdGW1sFcByOEHE0UZCeMmr22GbtakEDv0wOQZDZD",
                     "constant": false
                 },
                 "phoneNumber": {

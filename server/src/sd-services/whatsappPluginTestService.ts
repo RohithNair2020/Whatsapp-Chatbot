@@ -162,6 +162,38 @@ export class whatsappPluginTestService {
         this.generatedMiddlewares
       )
     );
+
+    this.app['get'](
+      `${this.serviceBasePath}/callback`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.sd_VL2NAipklb1DXkLA(bh, parentSpanInst);
+          //appendnew_next_sd_pSeuSUn3wYrZzrtf
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_pSeuSUn3wYrZzrtf');
+        }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
     //appendnew_flow_whatsappPluginTestService_HttpIn
   }
   //   service flows_whatsappPluginTestService
@@ -333,6 +365,40 @@ export class whatsappPluginTestService {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_HQEnwAJy3xSAyuKk');
+    }
+  }
+
+  async sd_VL2NAipklb1DXkLA(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_VL2NAipklb1DXkLA',
+      parentSpanInst
+    );
+    try {
+      bh.local.response =
+        bh.input.query['hub.challenge'] || 'Invalid challenge value';
+
+      this.tracerService.sendData(spanInst, bh);
+      await this.sd_84LAoqQy6uYOlgRp(bh, parentSpanInst);
+      //appendnew_next_sd_VL2NAipklb1DXkLA
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_VL2NAipklb1DXkLA',
+        spanInst,
+        'sd_VL2NAipklb1DXkLA'
+      );
+    }
+  }
+
+  async sd_84LAoqQy6uYOlgRp(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.local.response);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_84LAoqQy6uYOlgRp');
     }
   }
 
