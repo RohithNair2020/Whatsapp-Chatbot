@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_3TIqJnLTwdseorvq(bh, parentSpanInst);
+          bh = await this.sd_cMZNs4yE8hRCGqRM(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -202,38 +202,69 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_3TIqJnLTwdseorvq(bh, parentSpanInst) {
+  async sd_cMZNs4yE8hRCGqRM(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_3TIqJnLTwdseorvq',
+      'sd_cMZNs4yE8hRCGqRM',
       parentSpanInst
     );
     try {
-      const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
-      const WEBHOOK = JSON.parse(process.env.WEBHOOK);
-      const PORT = process.env.SSD_DEFAULT_PORT || 3000;
+      const configObj = this.sdService.getConfigObj(
+        'f66857f5-f768-fa72-2f70-2c9d069d52f6',
+        'sd_xbGZ4uivBqNWybRv'
+      );
+      const accessToken = configObj['accessToken'];
+      const phoneNumberID = configObj['phoneNumberID'];
+      const webhookVersion = configObj['webhookVersion'];
+      const sendMessage = async (to, message) => {
+        try {
+          const phoneNumberId = phoneNumberID;
+          const version = webhookVersion;
+          const bearerToken = accessToken;
 
-      const PROJECTID = CREDENTIALS['project_id'];
-
-      const CONFIGURATION = {
-        credentials: {
-          private_key: CREDENTIALS['private_key'],
-          client_email: CREDENTIALS['client_email'],
-        },
+          const response = await axios.post(
+            'https://graph.facebook.com/' +
+              version +
+              '/' +
+              phoneNumberId +
+              '/messages',
+            {
+              messaging_product: 'whatsapp',
+              to,
+              type: 'text',
+              text: {
+                body: message,
+              },
+            },
+            {
+              headers: {
+                Authorization: bearerToken,
+              },
+            }
+          );
+          return response.data;
+        } catch (err) {
+          console.error(err?.response || err, 'ffff');
+        }
       };
 
-      const sessionClient = new dialogflow.SessionsClient(CONFIGURATION);
+      if ('send_message' === 'send_message') {
+        console.log('if reached');
+        sendMessage('9846312379', 'Working working');
+      } else {
+        console.log('receive');
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_3TIqJnLTwdseorvq
+      //appendnew_next_sd_cMZNs4yE8hRCGqRM
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_3TIqJnLTwdseorvq',
+        'sd_cMZNs4yE8hRCGqRM',
         spanInst,
-        'sd_3TIqJnLTwdseorvq'
+        'sd_cMZNs4yE8hRCGqRM'
       );
     }
   }
@@ -254,6 +285,7 @@ export class whatsappPluginTestService {
       parentSpanInst
     );
     try {
+      console.log('working');
       console.log(bh.input.input);
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
@@ -277,7 +309,7 @@ export class whatsappPluginTestService {
     try {
       let outputVariables = await this.sd_Vj1mXichfw3yuFL1(
         spanInst,
-        bh.local.body
+        bh.input.body
       );
       this.tracerService.sendData(spanInst, bh);
       await this.sd_HQEnwAJy3xSAyuKk(bh, parentSpanInst);

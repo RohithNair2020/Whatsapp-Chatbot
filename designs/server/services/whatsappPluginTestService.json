@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_3TIqJnLTwdseorvq"
+                "sd_cMZNs4yE8hRCGqRM"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -119,45 +119,6 @@
         "generated": true
     },
     {
-        "id": "sd_3TIqJnLTwdseorvq",
-        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
-        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "config": "sd_xbGZ4uivBqNWybRv",
-        "action": "send_message",
-        "to": "\"9846312379\"",
-        "messageReceiveCallbackRoute": "\"\"",
-        "functionName": "sd_3TIqJnLTwdseorvq",
-        "category": "Messaging",
-        "x": 265,
-        "y": 140,
-        "wires": [
-            [
-                "sd_jpKe77TaHm7qXpdh"
-            ]
-        ],
-        "__ssdTypeInputs__": {
-            "to": {
-                "type": "str",
-                "value": "9846312379",
-                "constant": false
-            },
-            "messageReceiveCallbackRoute": {
-                "type": "str",
-                "value": "",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {
-            "messageReceiveCallbackRoute": true
-        },
-        "generateNext": false,
-        "serviceName": "whatsappPluginTestService",
-        "generated": true
-    },
-    {
         "id": "sd_Vj1mXichfw3yuFL1",
         "type": "Start",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
@@ -197,10 +158,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(bh.input.input);",
+        "script": "console.log(\"working\");\nconsole.log(bh.input.input);",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
-        "x": 220,
+        "x": 265,
         "y": 40,
         "wires": [
             []
@@ -229,6 +190,7 @@
         "acceptFileUpload": false,
         "useDataModel": false,
         "dataModelIsArray": false,
+        "uploadFileOptions": "",
         "erd": "",
         "erdName": "",
         "entity": "",
@@ -290,6 +252,7 @@
             "send": "bh.local.body"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -342,7 +305,7 @@
             {
                 "key": "input",
                 "map": true,
-                "valueType": "bh.local",
+                "valueType": "bh.input",
                 "value": "body"
             }
         ],
@@ -351,12 +314,12 @@
         "callService": "./whatsappPluginTestService",
         "startName": "sd_Vj1mXichfw3yuFL1",
         "inputParams": [
-            "bh.local.body"
+            "bh.input.body"
         ],
         "accept_bh": false,
         "functionName": "sd_bslW72MHsQyRbIBI",
         "category": "General",
-        "x": 260,
+        "x": 265,
         "y": 240,
         "wires": [
             [
@@ -364,6 +327,45 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_cMZNs4yE8hRCGqRM",
+        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "config": "sd_xbGZ4uivBqNWybRv",
+        "action": "send_message",
+        "to": "\"9846312379\"",
+        "messageReceiveCallbackRoute": "\"\"",
+        "functionName": "sd_cMZNs4yE8hRCGqRM",
+        "category": "Messaging",
+        "x": 280,
+        "y": 140,
+        "wires": [
+            [
+                "sd_jpKe77TaHm7qXpdh"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "to": {
+                "type": "str",
+                "value": "9846312379",
+                "constant": false
+            },
+            "messageReceiveCallbackRoute": {
+                "type": "str",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "messageReceiveCallbackRoute": true
+        },
         "generateNext": false,
         "serviceName": "whatsappPluginTestService",
         "generated": true
