@@ -303,7 +303,7 @@ export class whatsappPluginTestService {
 
   async sd_jpKe77TaHm7qXpdh(bh, parentSpanInst) {
     try {
-      bh.web.res.status(200).send(bh.local.body);
+      bh.web.res.status(200).send(bh.input.body);
 
       return bh;
     } catch (e) {

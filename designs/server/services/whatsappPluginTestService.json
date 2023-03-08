@@ -75,7 +75,7 @@
         "name": "",
         "headers": {},
         "responseBody": {
-            "type": "bh.local",
+            "type": "bh.input",
             "value": "body",
             "ssd_typedInputField": true
         },
@@ -88,11 +88,10 @@
         "swaggerResponse": {},
         "responseMapping": {
             "status": 200,
-            "obj": "bh.local.body",
-            "send": "bh.local.body"
+            "obj": "bh.input.body",
+            "send": "bh.input.body"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
