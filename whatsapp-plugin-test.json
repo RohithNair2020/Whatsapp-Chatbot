@@ -1,0 +1,13 @@
+{
+    "displayName": "whatsapp-plugin-test",
+    "appName": "whatsapp-plugin-test",
+    "description": "test app made to test whatsapp plugin",
+    "lastModified": "2023-03-06T09:09:00.142Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-03-06T09:08:57.185Z",
+    "analyticsId": "44287182-2595-14ba-98b6-aaecb6b97002",
+    "createdStudioVersion": "9.1.0"
+}

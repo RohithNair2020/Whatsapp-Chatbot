@@ -1,0 +1,371 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "type": "tab",
+        "createdDate": "2023-03-06T09:16:01.635Z",
+        "label": "whatsappPluginTestService",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "whatsappPluginTestService",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_BipCx5rPEANMM27h",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/whatsapp/:message",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 140,
+        "wires": [
+            [
+                "sd_3TIqJnLTwdseorvq"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "whatsappPluginTestService",
+        "functionName": "sd_BipCx5rPEANMM27h"
+    },
+    {
+        "id": "sd_jpKe77TaHm7qXpdh",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "body",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.body",
+            "send": "bh.local.body"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_jpKe77TaHm7qXpdh",
+        "category": "HTTP",
+        "x": 405,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_3TIqJnLTwdseorvq",
+        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "config": "sd_xbGZ4uivBqNWybRv",
+        "action": "send_message",
+        "to": "\"9846312379\"",
+        "messageReceiveCallbackRoute": "\"\"",
+        "functionName": "sd_3TIqJnLTwdseorvq",
+        "category": "Messaging",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [
+                "sd_jpKe77TaHm7qXpdh"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "to": {
+                "type": "str",
+                "value": "9846312379",
+                "constant": false
+            },
+            "messageReceiveCallbackRoute": {
+                "type": "str",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {
+            "messageReceiveCallbackRoute": true
+        },
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_Vj1mXichfw3yuFL1",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "input",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "sd_Vj1mXichfw3yuFL1",
+        "category": "General",
+        "x": 125,
+        "y": 40,
+        "wires": [
+            [
+                "sd_B6T2i43oLhRrHVbx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "whatsappPluginTestService"
+    },
+    {
+        "id": "sd_B6T2i43oLhRrHVbx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.input);",
+        "functionName": "sd_B6T2i43oLhRrHVbx",
+        "category": "Function",
+        "x": 220,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_mimar3WAXm0p2Bcx",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "/callback",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 240,
+        "wires": [
+            [
+                "sd_bslW72MHsQyRbIBI"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "whatsappPluginTestService",
+        "functionName": "sd_mimar3WAXm0p2Bcx"
+    },
+    {
+        "id": "sd_HQEnwAJy3xSAyuKk",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "body",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.body",
+            "send": "bh.local.body"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_HQEnwAJy3xSAyuKk",
+        "category": "HTTP",
+        "x": 405,
+        "y": 240,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_bslW72MHsQyRbIBI",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+            "type": "tab",
+            "createdDate": "2023-03-06T09:16:01.635Z",
+            "label": "whatsappPluginTestService",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_Vj1mXichfw3yuFL1",
+            "flowName": "sd_Vj1mXichfw3yuFL1"
+        },
+        "inputVariables": [
+            {
+                "key": "input",
+                "map": true,
+                "valueType": "bh.local",
+                "value": "body"
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [],
+        "callService": "./whatsappPluginTestService",
+        "startName": "sd_Vj1mXichfw3yuFL1",
+        "inputParams": [
+            "bh.local.body"
+        ],
+        "accept_bh": false,
+        "functionName": "sd_bslW72MHsQyRbIBI",
+        "category": "General",
+        "x": 260,
+        "y": 240,
+        "wires": [
+            [
+                "sd_HQEnwAJy3xSAyuKk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    }
+]

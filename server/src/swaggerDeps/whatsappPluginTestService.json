@@ -1,0 +1,28 @@
+{
+    "/whatsapp/:message": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "whatsappPluginTestService"
+            ]
+        }
+    },
+    "/callback": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "whatsappPluginTestService"
+            ]
+        }
+    }
+}
