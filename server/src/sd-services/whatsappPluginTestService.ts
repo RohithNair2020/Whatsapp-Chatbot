@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_ViGBUbfny4s7EcL2(bh, parentSpanInst);
+          bh = await this.sd_h9xgfTom8G2IbHnF(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_ViGBUbfny4s7EcL2(bh, parentSpanInst) {
+  async sd_h9xgfTom8G2IbHnF(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_ViGBUbfny4s7EcL2',
+      'sd_h9xgfTom8G2IbHnF',
       parentSpanInst
     );
     try {
@@ -298,15 +298,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_ViGBUbfny4s7EcL2
+      //appendnew_next_sd_h9xgfTom8G2IbHnF
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_ViGBUbfny4s7EcL2',
+        'sd_h9xgfTom8G2IbHnF',
         spanInst,
-        'sd_ViGBUbfny4s7EcL2'
+        'sd_h9xgfTom8G2IbHnF'
       );
     }
   }
@@ -331,11 +331,18 @@ export class whatsappPluginTestService {
       const changes = bh.input?.input?.entry[0].changes;
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
-      bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
-      bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
-      console.log('Required details: ', bh.local.fromNumber, bh.local.message);
+
+      if (changes['0']) {
+        bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
+        bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
+        console.log(
+          'Required details: ',
+          bh.local.fromNumber,
+          bh.local.message
+        );
+      }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_9EAEr1Jm9rZ0rQFg(bh, parentSpanInst);
+      bh = await this.sd_HW7h7gghuc8D5giL(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -349,27 +356,66 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_9EAEr1Jm9rZ0rQFg(bh, parentSpanInst) {
+  async sd_HW7h7gghuc8D5giL(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_9EAEr1Jm9rZ0rQFg',
+      'sd_HW7h7gghuc8D5giL',
       parentSpanInst
     );
     try {
-      console.log('This is my intent');
-      bh.local.chatBotMessage = 'This is my intent';
-      console.log(bh.local.chatBotMessage);
+      const PORT = process.env.SSD_DEFAULT_PORT || 3000;
+
+      const PROJECTID = process.env.DIALOG_FLOW_PROJECT_ID;
+
+      const CONFIGURATION = {
+        credentials: {
+          private_key: process.env.DIALOG_FLOW_PRIVATE_KEY,
+          client_email: process.env.DIALOG_FLOW_CLIENT_EMAIL,
+        },
+      };
+
+      const sessionClient = new dialogflow.SessionsClient(CONFIGURATION);
+
+      const detectIntent = async (languageCode, queryText, sessionId) => {
+        let sessionPath = sessionClient.projectAgentSessionPath(
+          PROJECTID,
+          sessionId
+        );
+
+        let request = {
+          session: sessionPath,
+          queryInput: {
+            text: {
+              text: queryText,
+              languageCode: languageCode,
+            },
+          },
+        };
+
+        const responses = await sessionClient.detectIntent(request);
+        console.log(responses, 'detect intent');
+        const result = responses[0].queryResult;
+
+        return result.fulfillmentText;
+      };
+
+      let languageCode = 'en';
+      bh.local.chatBotMessage = await detectIntent(
+        languageCode,
+        bh.local.message,
+        undefined
+      );
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_9EAEr1Jm9rZ0rQFg
+      //appendnew_next_sd_HW7h7gghuc8D5giL
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_9EAEr1Jm9rZ0rQFg',
+        'sd_HW7h7gghuc8D5giL',
         spanInst,
-        'sd_9EAEr1Jm9rZ0rQFg'
+        'sd_HW7h7gghuc8D5giL'
       );
     }
   }

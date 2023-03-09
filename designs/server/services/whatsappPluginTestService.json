@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_ViGBUbfny4s7EcL2"
+                "sd_h9xgfTom8G2IbHnF"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -191,14 +191,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\nbh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\nbh.local.message = changes[0]?.value?.messages[0]?.text?.body;\nconsole.log(\"Required details: \", bh.local.fromNumber, bh.local.message );",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes['0']) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
         "y": 40,
         "wires": [
             [
-                "sd_9EAEr1Jm9rZ0rQFg"
+                "sd_HW7h7gghuc8D5giL"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -505,93 +505,6 @@
         "generated": true
     },
     {
-        "id": "sd_9EAEr1Jm9rZ0rQFg",
-        "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
-        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "chatBotConfig": "sd_geKdBW6dIGTsZrB9",
-        "intent": "\"This is my intent\"",
-        "intentFulfillerRoute": "\"/fulfiller\"",
-        "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_9EAEr1Jm9rZ0rQFg",
-        "category": "Messaging",
-        "x": 405,
-        "y": 40,
-        "wires": [
-            [
-                "sd_uKJFrS8pOGFdCtNb"
-            ]
-        ],
-        "__ssdTypeInputs__": {
-            "intent": {
-                "type": "str",
-                "value": "This is my intent",
-                "constant": false
-            },
-            "intentFulfillerRoute": {
-                "type": "str",
-                "value": "/fulfiller",
-                "constant": false
-            },
-            "resultMapping": {
-                "type": "bh.local",
-                "value": "chatBotMessage",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "whatsappPluginTestService",
-        "generated": true
-    },
-    {
-        "id": "sd_ViGBUbfny4s7EcL2",
-        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
-        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "config": "sd_xbGZ4uivBqNWybRv",
-        "action": "send_message",
-        "to": "\"919846312379\"",
-        "messageReceiveCallbackRoute": "\"\"",
-        "message": "\"hi\"",
-        "functionName": "sd_ViGBUbfny4s7EcL2",
-        "category": "Messaging",
-        "x": 265,
-        "y": 140,
-        "wires": [
-            [
-                "sd_jpKe77TaHm7qXpdh"
-            ]
-        ],
-        "__ssdTypeInputs__": {
-            "to": {
-                "type": "str",
-                "value": "919846312379",
-                "constant": false
-            },
-            "messageReceiveCallbackRoute": {
-                "type": "str",
-                "value": "",
-                "constant": false
-            },
-            "message": {
-                "type": "str",
-                "value": "hi",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {
-            "messageReceiveCallbackRoute": true
-        },
-        "generateNext": false,
-        "serviceName": "whatsappPluginTestService",
-        "generated": true
-    },
-    {
         "id": "sd_uKJFrS8pOGFdCtNb",
         "type": "Script",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
@@ -606,6 +519,91 @@
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_HW7h7gghuc8D5giL",
+        "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "chatBotConfig": "sd_geKdBW6dIGTsZrB9",
+        "sessionID": "bh.local.fromNumber",
+        "intent": "bh.local.message",
+        "intentFulfillerRoute": "\"/full\"",
+        "resultMapping": "bh.local.chatBotMessage",
+        "functionName": "sd_HW7h7gghuc8D5giL",
+        "category": "Messaging",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_uKJFrS8pOGFdCtNb"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "sessionID": {
+                "type": "bh.local",
+                "value": "fromNumber",
+                "constant": false
+            },
+            "intent": {
+                "type": "bh.local",
+                "value": "message",
+                "constant": false
+            },
+            "intentFulfillerRoute": {
+                "type": "str",
+                "value": "/full",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "chatBotMessage",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_h9xgfTom8G2IbHnF",
+        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "config": "sd_xbGZ4uivBqNWybRv",
+        "action": "send_message",
+        "to": "\"919846312379\"",
+        "message": "\"This is a new message\"",
+        "functionName": "sd_h9xgfTom8G2IbHnF",
+        "category": "Messaging",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [
+                "sd_jpKe77TaHm7qXpdh"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "to": {
+                "type": "str",
+                "value": "919846312379",
+                "constant": false
+            },
+            "message": {
+                "type": "str",
+                "value": "This is a new message",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "whatsappPluginTestService",
