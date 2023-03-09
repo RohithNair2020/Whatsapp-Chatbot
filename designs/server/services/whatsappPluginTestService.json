@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_8GcQROTeH17pAkHe"
+                "sd_ViGBUbfny4s7EcL2"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -160,6 +160,14 @@
                     "value": ""
                 },
                 "output": true
+            },
+            {
+                "key": "chatBotMessage",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
             }
         ],
         "accept_bh": false,
@@ -183,13 +191,15 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\nbh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\nbh.local.message = changes[0]?.value?.messages[0]?.text?.body;\nconsole.log(\"Required details: \", bh.local.fromNumber, bh.local.message );",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\nbh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\nbh.local.message = changes[0]?.value?.messages[0]?.text?.body;\nconsole.log(\"Required details: \", bh.local.fromNumber, bh.local.message );",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_9EAEr1Jm9rZ0rQFg"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -277,6 +287,7 @@
             "send": "bh.local.response"
         },
         "dataModelIsArray": false,
+        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -494,7 +505,49 @@
         "generated": true
     },
     {
-        "id": "sd_8GcQROTeH17pAkHe",
+        "id": "sd_9EAEr1Jm9rZ0rQFg",
+        "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "chatBotConfig": "sd_geKdBW6dIGTsZrB9",
+        "intent": "\"This is my intent\"",
+        "intentFulfillerRoute": "\"/fulfiller\"",
+        "resultMapping": "bh.local.chatBotMessage",
+        "functionName": "sd_9EAEr1Jm9rZ0rQFg",
+        "category": "Messaging",
+        "x": 405,
+        "y": 40,
+        "wires": [
+            [
+                "sd_uKJFrS8pOGFdCtNb"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "intent": {
+                "type": "str",
+                "value": "This is my intent",
+                "constant": false
+            },
+            "intentFulfillerRoute": {
+                "type": "str",
+                "value": "/fulfiller",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "chatBotMessage",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_ViGBUbfny4s7EcL2",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -504,7 +557,8 @@
         "action": "send_message",
         "to": "\"919846312379\"",
         "messageReceiveCallbackRoute": "\"\"",
-        "functionName": "sd_8GcQROTeH17pAkHe",
+        "message": "\"hi\"",
+        "functionName": "sd_ViGBUbfny4s7EcL2",
         "category": "Messaging",
         "x": 265,
         "y": 140,
@@ -523,12 +577,36 @@
                 "type": "str",
                 "value": "",
                 "constant": false
+            },
+            "message": {
+                "type": "str",
+                "value": "hi",
+                "constant": false
             }
         },
         "__n_excludedFromValidation__": {
-            "messageReceiveCallbackRoute": true,
-            "receivedMessage": true
+            "messageReceiveCallbackRoute": true
         },
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_uKJFrS8pOGFdCtNb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"the very final node\", bh.local.chatBotMessage, bh.local.fromNumber);",
+        "functionName": "sd_uKJFrS8pOGFdCtNb",
+        "category": "Function",
+        "x": 540,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "whatsappPluginTestService",
         "generated": true
