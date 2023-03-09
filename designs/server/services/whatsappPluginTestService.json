@@ -144,6 +144,22 @@
                     "value": ""
                 },
                 "output": true
+            },
+            {
+                "key": "fromNumber",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            },
+            {
+                "key": "message",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
             }
         ],
         "accept_bh": false,
@@ -167,7 +183,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\nbh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\nbh.local.message = changes[0]?.value?.messages[0]?.text?.body;\nconsole.log(\"Required details: \", bh.local.fromNumber, bh.local.message );",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,

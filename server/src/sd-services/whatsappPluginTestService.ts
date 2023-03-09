@@ -210,6 +210,8 @@ export class whatsappPluginTestService {
         },
         local: {
           response: undefined,
+          fromNumber: undefined,
+          message: undefined,
         },
       };
       bh = this.sdService.__constructDefault(bh);
@@ -222,6 +224,8 @@ export class whatsappPluginTestService {
           input: {},
           local: {
             response: bh.local.response,
+            fromNumber: bh.local.fromNumber,
+            message: bh.local.message,
           },
         }
       );
@@ -325,6 +329,9 @@ export class whatsappPluginTestService {
       const changes = bh.input?.input?.entry[0]?.changes;
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
+      bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
+      bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
+      console.log('Required details: ', bh.local.fromNumber, bh.local.message);
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
