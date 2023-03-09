@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_yH4L7kmYkOYxXb9v"
+                "sd_s9IzjDQH1Zht7816"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -191,14 +191,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes && changes[0] && changes[0].value && changes[0].value?.messages) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes && changes[0] && changes[0].value && changes[0].value.messages) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
         "y": 40,
         "wires": [
             [
-                "sd_57OmiZ5eBUzgCQ5b"
+                "sd_uhhFyVZFUzjriRjH"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -525,7 +525,43 @@
         "generated": true
     },
     {
-        "id": "sd_57OmiZ5eBUzgCQ5b",
+        "id": "sd_s9IzjDQH1Zht7816",
+        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
+        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "config": "sd_xbGZ4uivBqNWybRv",
+        "to": "\"919846312379\"",
+        "message": "bh.input.params.message",
+        "functionName": "sd_s9IzjDQH1Zht7816",
+        "category": "Messaging",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [
+                "sd_jpKe77TaHm7qXpdh"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "to": {
+                "type": "str",
+                "value": "919846312379",
+                "constant": false
+            },
+            "message": {
+                "type": "bh.input",
+                "value": "params.message",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "whatsappPluginTestService",
+        "generated": true
+    },
+    {
+        "id": "sd_uhhFyVZFUzjriRjH",
         "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -536,9 +572,9 @@
         "intent": "bh.local.message",
         "intentFulfillerRoute": "\"/full\"",
         "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_57OmiZ5eBUzgCQ5b",
+        "functionName": "sd_uhhFyVZFUzjriRjH",
         "category": "Messaging",
-        "x": 400,
+        "x": 405,
         "y": 40,
         "wires": [
             [
@@ -564,42 +600,6 @@
             "resultMapping": {
                 "type": "bh.local",
                 "value": "chatBotMessage",
-                "constant": false
-            }
-        },
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "whatsappPluginTestService",
-        "generated": true
-    },
-    {
-        "id": "sd_yH4L7kmYkOYxXb9v",
-        "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
-        "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
-        "viewType": "server",
-        "nodeType": "flow",
-        "name": "",
-        "config": "sd_xbGZ4uivBqNWybRv",
-        "to": "\"919846312379\"",
-        "message": "bh.input.params.message",
-        "functionName": "sd_yH4L7kmYkOYxXb9v",
-        "category": "Messaging",
-        "x": 265,
-        "y": 140,
-        "wires": [
-            [
-                "sd_jpKe77TaHm7qXpdh"
-            ]
-        ],
-        "__ssdTypeInputs__": {
-            "to": {
-                "type": "str",
-                "value": "919846312379",
-                "constant": false
-            },
-            "message": {
-                "type": "bh.input",
-                "value": "params.message",
                 "constant": false
             }
         },

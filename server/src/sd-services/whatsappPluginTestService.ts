@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_yH4L7kmYkOYxXb9v(bh, parentSpanInst);
+          bh = await this.sd_s9IzjDQH1Zht7816(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_yH4L7kmYkOYxXb9v(bh, parentSpanInst) {
+  async sd_s9IzjDQH1Zht7816(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_yH4L7kmYkOYxXb9v',
+      'sd_s9IzjDQH1Zht7816',
       parentSpanInst
     );
     try {
@@ -294,15 +294,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_yH4L7kmYkOYxXb9v
+      //appendnew_next_sd_s9IzjDQH1Zht7816
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_yH4L7kmYkOYxXb9v',
+        'sd_s9IzjDQH1Zht7816',
         spanInst,
-        'sd_yH4L7kmYkOYxXb9v'
+        'sd_s9IzjDQH1Zht7816'
       );
     }
   }
@@ -332,7 +332,7 @@ export class whatsappPluginTestService {
         changes &&
         changes[0] &&
         changes[0].value &&
-        changes[0].value?.messages
+        changes[0].value.messages
       ) {
         bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
         bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
@@ -343,7 +343,7 @@ export class whatsappPluginTestService {
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_57OmiZ5eBUzgCQ5b(bh, parentSpanInst);
+      bh = await this.sd_uhhFyVZFUzjriRjH(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -357,9 +357,9 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_57OmiZ5eBUzgCQ5b(bh, parentSpanInst) {
+  async sd_uhhFyVZFUzjriRjH(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_57OmiZ5eBUzgCQ5b',
+      'sd_uhhFyVZFUzjriRjH',
       parentSpanInst
     );
     try {
@@ -400,24 +400,28 @@ export class whatsappPluginTestService {
       };
 
       let languageCode = 'en';
-      console.log('inside chatbot codegen', bh.local.message, undefined);
+      console.log(
+        'inside chatbot codegen',
+        bh.local.message,
+        bh.local.fromNumber
+      );
       bh.local.chatBotMessage = await detectIntent(
         languageCode,
         bh.local.message,
-        undefined
+        bh.local.fromNumber
       );
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_57OmiZ5eBUzgCQ5b
+      //appendnew_next_sd_uhhFyVZFUzjriRjH
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_57OmiZ5eBUzgCQ5b',
+        'sd_uhhFyVZFUzjriRjH',
         spanInst,
-        'sd_57OmiZ5eBUzgCQ5b'
+        'sd_uhhFyVZFUzjriRjH'
       );
     }
   }
