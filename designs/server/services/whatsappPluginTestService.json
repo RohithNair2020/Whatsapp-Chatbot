@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_h9xgfTom8G2IbHnF"
+                "sd_yH4L7kmYkOYxXb9v"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -191,14 +191,14 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes['0']) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
         "y": 40,
         "wires": [
             [
-                "sd_HW7h7gghuc8D5giL"
+                "sd_57OmiZ5eBUzgCQ5b"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -525,7 +525,7 @@
         "generated": true
     },
     {
-        "id": "sd_HW7h7gghuc8D5giL",
+        "id": "sd_57OmiZ5eBUzgCQ5b",
         "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -536,9 +536,9 @@
         "intent": "bh.local.message",
         "intentFulfillerRoute": "\"/full\"",
         "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_HW7h7gghuc8D5giL",
+        "functionName": "sd_57OmiZ5eBUzgCQ5b",
         "category": "Messaging",
-        "x": 405,
+        "x": 400,
         "y": 40,
         "wires": [
             [
@@ -573,17 +573,16 @@
         "generated": true
     },
     {
-        "id": "sd_h9xgfTom8G2IbHnF",
+        "id": "sd_yH4L7kmYkOYxXb9v",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
         "nodeType": "flow",
         "name": "",
         "config": "sd_xbGZ4uivBqNWybRv",
-        "action": "send_message",
         "to": "\"919846312379\"",
-        "message": "\"This is a new message\"",
-        "functionName": "sd_h9xgfTom8G2IbHnF",
+        "message": "bh.input.params.message",
+        "functionName": "sd_yH4L7kmYkOYxXb9v",
         "category": "Messaging",
         "x": 265,
         "y": 140,
@@ -599,8 +598,8 @@
                 "constant": false
             },
             "message": {
-                "type": "str",
-                "value": "This is a new message",
+                "type": "bh.input",
+                "value": "params.message",
                 "constant": false
             }
         },

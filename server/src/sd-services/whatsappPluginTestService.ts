@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_h9xgfTom8G2IbHnF(bh, parentSpanInst);
+          bh = await this.sd_yH4L7kmYkOYxXb9v(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_h9xgfTom8G2IbHnF(bh, parentSpanInst) {
+  async sd_yH4L7kmYkOYxXb9v(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_h9xgfTom8G2IbHnF',
+      'sd_yH4L7kmYkOYxXb9v',
       parentSpanInst
     );
     try {
@@ -289,24 +289,20 @@ export class whatsappPluginTestService {
         }
       };
 
-      if ('send_message' === 'send_message') {
-        console.log('if reached');
-        sendMessage('919846312379', 'Working working');
-      } else {
-        console.log('receive');
-      }
+      console.log('whatsapp codegen', '919846312379', bh.input.params.message);
+      sendMessage('919846312379', bh.input.params.message);
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_h9xgfTom8G2IbHnF
+      //appendnew_next_sd_yH4L7kmYkOYxXb9v
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_h9xgfTom8G2IbHnF',
+        'sd_yH4L7kmYkOYxXb9v',
         spanInst,
-        'sd_h9xgfTom8G2IbHnF'
+        'sd_yH4L7kmYkOYxXb9v'
       );
     }
   }
@@ -332,7 +328,7 @@ export class whatsappPluginTestService {
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
 
-      if (changes['0']) {
+      if (changes) {
         bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
         bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
         console.log(
@@ -342,7 +338,7 @@ export class whatsappPluginTestService {
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_HW7h7gghuc8D5giL(bh, parentSpanInst);
+      bh = await this.sd_57OmiZ5eBUzgCQ5b(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -356,9 +352,9 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_HW7h7gghuc8D5giL(bh, parentSpanInst) {
+  async sd_57OmiZ5eBUzgCQ5b(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_HW7h7gghuc8D5giL',
+      'sd_57OmiZ5eBUzgCQ5b',
       parentSpanInst
     );
     try {
@@ -399,6 +395,7 @@ export class whatsappPluginTestService {
       };
 
       let languageCode = 'en';
+      console.log('inside chatbot codegen', bh.local.message, undefined);
       bh.local.chatBotMessage = await detectIntent(
         languageCode,
         bh.local.message,
@@ -407,15 +404,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_HW7h7gghuc8D5giL
+      //appendnew_next_sd_57OmiZ5eBUzgCQ5b
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_HW7h7gghuc8D5giL',
+        'sd_57OmiZ5eBUzgCQ5b',
         spanInst,
-        'sd_HW7h7gghuc8D5giL'
+        'sd_57OmiZ5eBUzgCQ5b'
       );
     }
   }
