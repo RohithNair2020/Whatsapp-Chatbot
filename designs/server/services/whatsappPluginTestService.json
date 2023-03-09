@@ -136,7 +136,16 @@
                 "output": false
             }
         ],
-        "localVariables": [],
+        "localVariables": [
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
         "accept_bh": false,
         "functionName": "sd_Vj1mXichfw3yuFL1",
         "category": "General",
@@ -158,7 +167,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(changes);",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0]?.changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,
@@ -236,7 +245,7 @@
         "headers": {},
         "responseBody": {
             "type": "bh.local",
-            "value": "body",
+            "value": "response",
             "ssd_typedInputField": true
         },
         "httpcode": {
@@ -248,11 +257,10 @@
         "swaggerResponse": {},
         "responseMapping": {
             "status": 200,
-            "obj": "bh.local.body",
-            "send": "bh.local.body"
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
         },
         "dataModelIsArray": false,
-        "cookies": [],
         "inputs": 1,
         "outputs": 0,
         "erd": "",
@@ -310,7 +318,16 @@
             }
         ],
         "bhVariables": [],
-        "outputMapping": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "bh.local",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "bh.local.response"
+            }
+        ],
         "callService": "./whatsappPluginTestService",
         "startName": "sd_Vj1mXichfw3yuFL1",
         "inputParams": [

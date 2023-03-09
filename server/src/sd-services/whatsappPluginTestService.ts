@@ -208,7 +208,9 @@ export class whatsappPluginTestService {
         input: {
           input: input,
         },
-        local: {},
+        local: {
+          response: undefined,
+        },
       };
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
@@ -218,7 +220,9 @@ export class whatsappPluginTestService {
         // formatting output variables
         {
           input: {},
-          local: {},
+          local: {
+            response: bh.local.response,
+          },
         }
       );
     } catch (e) {
@@ -319,7 +323,8 @@ export class whatsappPluginTestService {
     try {
       console.log('working');
       const changes = bh.input?.input?.entry[0]?.changes;
-      console.log(changes);
+      console.log(JSON.stringify(changes));
+      bh.local.response = changes;
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
@@ -344,6 +349,8 @@ export class whatsappPluginTestService {
         spanInst,
         bh.input.body
       );
+      bh.local.response = outputVariables.local.response;
+
       this.tracerService.sendData(spanInst, bh);
       await this.sd_HQEnwAJy3xSAyuKk(bh, parentSpanInst);
       //appendnew_next_sd_bslW72MHsQyRbIBI
@@ -361,7 +368,7 @@ export class whatsappPluginTestService {
 
   async sd_HQEnwAJy3xSAyuKk(bh, parentSpanInst) {
     try {
-      bh.web.res.status(200).send(bh.local.body);
+      bh.web.res.status(200).send(bh.local.response);
 
       return bh;
     } catch (e) {
