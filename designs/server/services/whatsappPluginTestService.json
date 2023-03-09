@@ -191,7 +191,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
+        "script": "console.log(\"working\");\nconst changes = bh.input?.input?.entry[0].changes;\nconsole.log(JSON.stringify(changes));\nbh.local.response = changes;\n\nif (changes && changes[0] && changes[0].value && changes[0].value?.messages) {\n    bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;\n    bh.local.message = changes[0]?.value?.messages[0]?.text?.body;\n    console.log(\"Required details: \", bh.local.fromNumber, bh.local.message );\n}",
         "functionName": "sd_B6T2i43oLhRrHVbx",
         "category": "Function",
         "x": 265,

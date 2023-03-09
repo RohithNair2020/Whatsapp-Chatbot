@@ -328,7 +328,12 @@ export class whatsappPluginTestService {
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
 
-      if (changes) {
+      if (
+        changes &&
+        changes[0] &&
+        changes[0].value &&
+        changes[0].value?.messages
+      ) {
         bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
         bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
         console.log(
