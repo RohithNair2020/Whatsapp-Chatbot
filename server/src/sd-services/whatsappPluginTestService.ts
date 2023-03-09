@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_mjjcpdgxB2knmL9G(bh, parentSpanInst);
+          bh = await this.sd_8GcQROTeH17pAkHe(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -234,9 +234,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_mjjcpdgxB2knmL9G(bh, parentSpanInst) {
+  async sd_8GcQROTeH17pAkHe(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_mjjcpdgxB2knmL9G',
+      'sd_8GcQROTeH17pAkHe',
       parentSpanInst
     );
     try {
@@ -281,22 +281,22 @@ export class whatsappPluginTestService {
 
       if ('send_message' === 'send_message') {
         console.log('if reached');
-        sendMessage('919747497621', 'Working working');
+        sendMessage('919846312379', 'Working working');
       } else {
         console.log('receive');
       }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_mjjcpdgxB2knmL9G
+      //appendnew_next_sd_8GcQROTeH17pAkHe
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_mjjcpdgxB2knmL9G',
+        'sd_8GcQROTeH17pAkHe',
         spanInst,
-        'sd_mjjcpdgxB2knmL9G'
+        'sd_8GcQROTeH17pAkHe'
       );
     }
   }
