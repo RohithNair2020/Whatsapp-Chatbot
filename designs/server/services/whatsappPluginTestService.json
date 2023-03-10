@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_FDd76hvaL3WOtTee"
+                "sd_Z4XucItyoWuCnW9z"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -198,7 +198,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_UIRl5F6GXdoqe6nO"
+                "sd_oAsUdcap7cumQJg7"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -525,7 +525,7 @@
         "generated": true
     },
     {
-        "id": "sd_UIRl5F6GXdoqe6nO",
+        "id": "sd_oAsUdcap7cumQJg7",
         "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -536,7 +536,7 @@
         "intent": "bh.local.message",
         "intentFulfillerRoute": "\"/full\"",
         "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_UIRl5F6GXdoqe6nO",
+        "functionName": "sd_oAsUdcap7cumQJg7",
         "category": "Messaging",
         "x": 405,
         "y": 40,
@@ -573,7 +573,7 @@
         "generated": true
     },
     {
-        "id": "sd_FDd76hvaL3WOtTee",
+        "id": "sd_Z4XucItyoWuCnW9z",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -582,9 +582,9 @@
         "config": "sd_xbGZ4uivBqNWybRv",
         "to": "\"919846312379\"",
         "message": "bh.input.params.message",
-        "functionName": "sd_FDd76hvaL3WOtTee",
+        "functionName": "sd_Z4XucItyoWuCnW9z",
         "category": "Messaging",
-        "x": 265,
+        "x": 280,
         "y": 140,
         "wires": [
             [
