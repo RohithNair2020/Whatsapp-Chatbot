@@ -2,21 +2,21 @@ let instance = null;
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { StatusCodes as httpStatusCodes } from "http-status-codes"; //_splitter_
-import * as cookieParser from "cookie-parser"; //_splitter_
-import { Readable } from "stream"; //_splitter_
-import { setInterval } from "timers"; //_splitter_
-import { Issuer, custom } from "openid-client"; //_splitter_
-import * as crypto from "crypto"; //_splitter_
-import * as url from "url"; //_splitter_
-import { SDBaseService } from "../services/SDBaseService"; //_splitter_
-import { Middleware } from "../middleware/Middleware"; //_splitter_
-import * as settings from "../config/config"; //_splitter_
-import log from "../utils/Logger"; //_splitter_
-import { TracerService } from "../services/TracerService"; //_splitter_
-import * as dfff from "dialogflow-fulfillment"; //_splitter_
-import * as dialogflow from "@google-cloud/dialogflow"; //_splitter_
-import * as axios from "axios"; //_splitter_
+import { StatusCodes as httpStatusCodes } from 'http-status-codes'; //_splitter_
+import * as cookieParser from 'cookie-parser'; //_splitter_
+import { Readable } from 'stream'; //_splitter_
+import { setInterval } from 'timers'; //_splitter_
+import { Issuer, custom } from 'openid-client'; //_splitter_
+import * as crypto from 'crypto'; //_splitter_
+import * as url from 'url'; //_splitter_
+import { SDBaseService } from '../services/SDBaseService'; //_splitter_
+import { Middleware } from '../middleware/Middleware'; //_splitter_
+import * as settings from '../config/config'; //_splitter_
+import log from '../utils/Logger'; //_splitter_
+import { TracerService } from '../services/TracerService'; //_splitter_
+import * as dfff from 'dialogflow-fulfillment'; //_splitter_
+import * as dialogflow from '@google-cloud/dialogflow'; //_splitter_
+import * as axios from 'axios'; //_splitter_
 //append_imports_end
 export class whatsappPluginTestService {
   private sdService = new SDBaseService();
@@ -34,7 +34,7 @@ export class whatsappPluginTestService {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = "whatsappPluginTestService";
+    this.serviceName = 'whatsappPluginTestService';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -91,20 +91,20 @@ export class whatsappPluginTestService {
 
   private mountAllMiddlewares() {
     log.debug(
-      "mounting all middlewares for service :: whatsappPluginTestService"
+      'mounting all middlewares for service :: whatsappPluginTestService'
     );
 
     //appendnew_flow_whatsappPluginTestService_MiddlewareStart
   }
   private mountAllPaths() {
-    log.debug("mounting all paths for service :: whatsappPluginTestService");
+    log.debug('mounting all paths for service :: whatsappPluginTestService');
 
-    this.app["post"](
+    this.app['post'](
       `${this.serviceBasePath}/whatsapp/:message`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "pre",
+        'pre',
         this.generatedMiddlewares
       ),
 
@@ -118,25 +118,25 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_Dyba1dRwpzgl5gA6(bh, parentSpanInst);
+          bh = await this.sd_PNeWsTPSO84k7DJL(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
-          return await this.errorHandler(bh, e, "sd_BipCx5rPEANMM27h");
+          return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "post",
+        'post',
         this.generatedMiddlewares
       )
     );
 
-    this.app["post"](
+    this.app['post'](
       `${this.serviceBasePath}/callback`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "pre",
+        'pre',
         this.generatedMiddlewares
       ),
 
@@ -153,22 +153,22 @@ export class whatsappPluginTestService {
           bh = await this.sd_bslW72MHsQyRbIBI(bh, parentSpanInst);
           //appendnew_next_sd_mimar3WAXm0p2Bcx
         } catch (e) {
-          return await this.errorHandler(bh, e, "sd_mimar3WAXm0p2Bcx");
+          return await this.errorHandler(bh, e, 'sd_mimar3WAXm0p2Bcx');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "post",
+        'post',
         this.generatedMiddlewares
       )
     );
 
-    this.app["get"](
+    this.app['get'](
       `${this.serviceBasePath}/callback`,
       cookieParser(),
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "pre",
+        'pre',
         this.generatedMiddlewares
       ),
 
@@ -185,12 +185,12 @@ export class whatsappPluginTestService {
           bh = await this.sd_VL2NAipklb1DXkLA(bh, parentSpanInst);
           //appendnew_next_sd_pSeuSUn3wYrZzrtf
         } catch (e) {
-          return await this.errorHandler(bh, e, "sd_pSeuSUn3wYrZzrtf");
+          return await this.errorHandler(bh, e, 'sd_pSeuSUn3wYrZzrtf');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
         null,
-        "post",
+        'post',
         this.generatedMiddlewares
       )
     );
@@ -200,7 +200,7 @@ export class whatsappPluginTestService {
 
   async sd_Vj1mXichfw3yuFL1(parentSpanInst, input: any = undefined, ...others) {
     const spanInst = this.tracerService.createSpan(
-      "sd_Vj1mXichfw3yuFL1",
+      'sd_Vj1mXichfw3yuFL1',
       parentSpanInst
     );
     try {
@@ -235,28 +235,28 @@ export class whatsappPluginTestService {
       return await this.errorHandler(
         bh,
         e,
-        "sd_Vj1mXichfw3yuFL1",
+        'sd_Vj1mXichfw3yuFL1',
         spanInst,
-        "sd_Vj1mXichfw3yuFL1"
+        'sd_Vj1mXichfw3yuFL1'
       );
     }
   }
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_Dyba1dRwpzgl5gA6(bh, parentSpanInst) {
+  async sd_PNeWsTPSO84k7DJL(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_Dyba1dRwpzgl5gA6",
+      'sd_PNeWsTPSO84k7DJL',
       parentSpanInst
     );
     try {
       const configObj = this.sdService.getConfigObj(
-        "f66857f5-f768-fa72-2f70-2c9d069d52f6",
-        "sd_xbGZ4uivBqNWybRv"
+        'f66857f5-f768-fa72-2f70-2c9d069d52f6',
+        'sd_xbGZ4uivBqNWybRv'
       );
-      const accessToken = "Bearer " + process.env.accessToken;
-      const phoneNumberID = configObj["phoneNumberID"];
-      const webhookVersion = configObj["webhookVersion"];
+      const accessToken = 'Bearer ' + process.env.accessToken;
+      const phoneNumberID = configObj['phoneNumberID'];
+      const webhookVersion = configObj['webhookVersion'];
       const sendMessage = async (to, message) => {
         try {
           const phoneNumberId = phoneNumberID;
@@ -264,15 +264,15 @@ export class whatsappPluginTestService {
           const bearerToken = accessToken;
 
           const response = await axios.post(
-            "https://graph.facebook.com/" +
+            'https://graph.facebook.com/' +
               version +
-              "/" +
+              '/' +
               phoneNumberId +
-              "/messages",
+              '/messages',
             {
-              messaging_product: "whatsapp",
+              messaging_product: 'whatsapp',
               to,
-              type: "text",
+              type: 'text',
               text: {
                 body: message,
               },
@@ -285,24 +285,24 @@ export class whatsappPluginTestService {
           );
           return response.data;
         } catch (err) {
-          console.error(err?.response || err, "ffff");
+          console.error(err?.response || err, 'ffff');
         }
       };
 
-      console.log("whatsapp codegen", "919846312379", bh.input.params.message);
-      sendMessage("919846312379", bh.input.params.message);
+      console.log('whatsapp codegen', '919846312379', bh.input.params.message);
+      sendMessage('919846312379', bh.input.params.message);
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_Dyba1dRwpzgl5gA6
+      //appendnew_next_sd_PNeWsTPSO84k7DJL
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        "sd_Dyba1dRwpzgl5gA6",
+        'sd_PNeWsTPSO84k7DJL',
         spanInst,
-        "sd_Dyba1dRwpzgl5gA6"
+        'sd_PNeWsTPSO84k7DJL'
       );
     }
   }
@@ -313,17 +313,17 @@ export class whatsappPluginTestService {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, "sd_jpKe77TaHm7qXpdh");
+      return await this.errorHandler(bh, e, 'sd_jpKe77TaHm7qXpdh');
     }
   }
 
   async sd_B6T2i43oLhRrHVbx(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_B6T2i43oLhRrHVbx",
+      'sd_B6T2i43oLhRrHVbx',
       parentSpanInst
     );
     try {
-      console.log("working");
+      console.log('working');
       const changes = bh.input?.input?.entry[0].changes;
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
@@ -337,29 +337,29 @@ export class whatsappPluginTestService {
         bh.local.fromNumber = changes[0]?.value?.messages[0]?.from;
         bh.local.message = changes[0]?.value?.messages[0]?.text?.body;
         console.log(
-          "Required details: ",
+          'Required details: ',
           bh.local.fromNumber,
           bh.local.message
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_A7uaysMPvl45Oyqe(bh, parentSpanInst);
+      bh = await this.sd_RpMDE0y932gOpF9i(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        "sd_B6T2i43oLhRrHVbx",
+        'sd_B6T2i43oLhRrHVbx',
         spanInst,
-        "sd_B6T2i43oLhRrHVbx"
+        'sd_B6T2i43oLhRrHVbx'
       );
     }
   }
 
-  async sd_A7uaysMPvl45Oyqe(bh, parentSpanInst) {
+  async sd_RpMDE0y932gOpF9i(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_A7uaysMPvl45Oyqe",
+      'sd_RpMDE0y932gOpF9i',
       parentSpanInst
     );
     try {
@@ -371,18 +371,18 @@ export class whatsappPluginTestService {
         credentials: {
           private_key: process.env.DIALOG_FLOW_PRIVATE_KEY.replace(
             /\\n/g,
-            "\n"
+            '\n'
           ),
           client_email: process.env.DIALOG_FLOW_CLIENT_EMAIL,
         },
       };
 
-      console.log("key :", CONFIGURATION.credentials.private_key);
+      console.log('key :', CONFIGURATION.credentials.private_key);
       const sessionClient = new dialogflow.SessionsClient(CONFIGURATION);
 
       const fulfill = () => {
-        console.log("fulfill Called");
-        return "fullfill called";
+        console.log('fulfill Called');
+        return 'fullfill called';
       };
 
       const detectIntent = async (languageCode, queryText, sessionId) => {
@@ -402,19 +402,15 @@ export class whatsappPluginTestService {
         };
 
         const responses = await sessionClient.detectIntent(request);
-        console.log(responses, "detect intent");
+        console.log(responses, 'detect intent');
         const result = responses[0].queryResult;
 
-        if (result.fulfillmentText) {
-          return result.fulfillmentText;
-        } else {
-          return fulfill();
-        }
+        return result.fulfillmentText;
       };
 
-      let languageCode = "en";
+      let languageCode = 'en';
       console.log(
-        "inside chatbot codegen",
+        'inside chatbot codegen',
         bh.local.message,
         bh.local.fromNumber
       );
@@ -425,48 +421,89 @@ export class whatsappPluginTestService {
       );
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_A7uaysMPvl45Oyqe
+      bh = await this.sd_wbaqbQ3rOrMDOfuz(bh, parentSpanInst);
+      //appendnew_next_sd_RpMDE0y932gOpF9i
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        "sd_A7uaysMPvl45Oyqe",
+        'sd_RpMDE0y932gOpF9i',
         spanInst,
-        "sd_A7uaysMPvl45Oyqe"
+        'sd_RpMDE0y932gOpF9i'
       );
     }
   }
 
-  async sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst) {
+  async sd_wbaqbQ3rOrMDOfuz(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_uKJFrS8pOGFdCtNb",
+      'sd_wbaqbQ3rOrMDOfuz',
       parentSpanInst
     );
     try {
-      console.log(
-        "the very final node",
-        bh.local.chatBotMessage,
-        bh.local.fromNumber
+      const configObj = this.sdService.getConfigObj(
+        'f66857f5-f768-fa72-2f70-2c9d069d52f6',
+        'sd_xbGZ4uivBqNWybRv'
       );
+      const accessToken = 'Bearer ' + process.env.accessToken;
+      const phoneNumberID = configObj['phoneNumberID'];
+      const webhookVersion = configObj['webhookVersion'];
+      const sendMessage = async (to, message) => {
+        try {
+          const phoneNumberId = phoneNumberID;
+          const version = webhookVersion;
+          const bearerToken = accessToken;
+
+          const response = await axios.post(
+            'https://graph.facebook.com/' +
+              version +
+              '/' +
+              phoneNumberId +
+              '/messages',
+            {
+              messaging_product: 'whatsapp',
+              to,
+              type: 'text',
+              text: {
+                body: message,
+              },
+            },
+            {
+              headers: {
+                Authorization: bearerToken,
+              },
+            }
+          );
+          return response.data;
+        } catch (err) {
+          console.error(err?.response || err, 'ffff');
+        }
+      };
+
+      console.log(
+        'whatsapp codegen',
+        bh.local.fromNumber,
+        bh.local.chatBotMessage
+      );
+      sendMessage(bh.local.fromNumber, bh.local.chatBotMessage);
+
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_uKJFrS8pOGFdCtNb
+      //appendnew_next_sd_wbaqbQ3rOrMDOfuz
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        "sd_uKJFrS8pOGFdCtNb",
+        'sd_wbaqbQ3rOrMDOfuz',
         spanInst,
-        "sd_uKJFrS8pOGFdCtNb"
+        'sd_wbaqbQ3rOrMDOfuz'
       );
     }
   }
 
   async sd_bslW72MHsQyRbIBI(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_bslW72MHsQyRbIBI",
+      'sd_bslW72MHsQyRbIBI',
       parentSpanInst
     );
     try {
@@ -484,9 +521,9 @@ export class whatsappPluginTestService {
       return await this.errorHandler(
         bh,
         e,
-        "sd_bslW72MHsQyRbIBI",
+        'sd_bslW72MHsQyRbIBI',
         spanInst,
-        "sd_bslW72MHsQyRbIBI"
+        'sd_bslW72MHsQyRbIBI'
       );
     }
   }
@@ -497,18 +534,18 @@ export class whatsappPluginTestService {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, "sd_HQEnwAJy3xSAyuKk");
+      return await this.errorHandler(bh, e, 'sd_HQEnwAJy3xSAyuKk');
     }
   }
 
   async sd_VL2NAipklb1DXkLA(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      "sd_VL2NAipklb1DXkLA",
+      'sd_VL2NAipklb1DXkLA',
       parentSpanInst
     );
     try {
       bh.local.response =
-        bh.input.query["hub.challenge"] || "Invalid challenge value";
+        bh.input.query['hub.challenge'] || 'Invalid challenge value';
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_84LAoqQy6uYOlgRp(bh, parentSpanInst);
@@ -518,9 +555,9 @@ export class whatsappPluginTestService {
       return await this.errorHandler(
         bh,
         e,
-        "sd_VL2NAipklb1DXkLA",
+        'sd_VL2NAipklb1DXkLA',
         spanInst,
-        "sd_VL2NAipklb1DXkLA"
+        'sd_VL2NAipklb1DXkLA'
       );
     }
   }
@@ -531,7 +568,7 @@ export class whatsappPluginTestService {
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, "sd_84LAoqQy6uYOlgRp");
+      return await this.errorHandler(bh, e, 'sd_84LAoqQy6uYOlgRp');
     }
   }
 
