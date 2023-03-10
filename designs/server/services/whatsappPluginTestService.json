@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_Dyba1dRwpzgl5gA6"
+                "sd_z1WY2DULN97NdYFv"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -198,7 +198,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_A7uaysMPvl45Oyqe"
+                "sd_TdhX88Wo2O7hiBQA"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -525,7 +525,7 @@
         "generated": true
     },
     {
-        "id": "sd_A7uaysMPvl45Oyqe",
+        "id": "sd_TdhX88Wo2O7hiBQA",
         "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -536,9 +536,9 @@
         "intent": "bh.local.message",
         "intentFulfillerRoute": "\"/full\"",
         "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_A7uaysMPvl45Oyqe",
+        "functionName": "sd_TdhX88Wo2O7hiBQA",
         "category": "Messaging",
-        "x": 400,
+        "x": 405,
         "y": 40,
         "wires": [
             [
@@ -573,7 +573,7 @@
         "generated": true
     },
     {
-        "id": "sd_Dyba1dRwpzgl5gA6",
+        "id": "sd_z1WY2DULN97NdYFv",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -582,7 +582,7 @@
         "config": "sd_xbGZ4uivBqNWybRv",
         "to": "\"919846312379\"",
         "message": "bh.input.params.message",
-        "functionName": "sd_Dyba1dRwpzgl5gA6",
+        "functionName": "sd_z1WY2DULN97NdYFv",
         "category": "Messaging",
         "x": 265,
         "y": 140,
