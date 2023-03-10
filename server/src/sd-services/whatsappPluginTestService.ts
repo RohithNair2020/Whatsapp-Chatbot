@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_Z4XucItyoWuCnW9z(bh, parentSpanInst);
+          bh = await this.sd_Dyba1dRwpzgl5gA6(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_Z4XucItyoWuCnW9z(bh, parentSpanInst) {
+  async sd_Dyba1dRwpzgl5gA6(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_Z4XucItyoWuCnW9z',
+      'sd_Dyba1dRwpzgl5gA6',
       parentSpanInst
     );
     try {
@@ -294,15 +294,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_Z4XucItyoWuCnW9z
+      //appendnew_next_sd_Dyba1dRwpzgl5gA6
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Z4XucItyoWuCnW9z',
+        'sd_Dyba1dRwpzgl5gA6',
         spanInst,
-        'sd_Z4XucItyoWuCnW9z'
+        'sd_Dyba1dRwpzgl5gA6'
       );
     }
   }
@@ -343,7 +343,7 @@ export class whatsappPluginTestService {
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_oAsUdcap7cumQJg7(bh, parentSpanInst);
+      bh = await this.sd_A7uaysMPvl45Oyqe(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -357,9 +357,9 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_oAsUdcap7cumQJg7(bh, parentSpanInst) {
+  async sd_A7uaysMPvl45Oyqe(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_oAsUdcap7cumQJg7',
+      'sd_A7uaysMPvl45Oyqe',
       parentSpanInst
     );
     try {
@@ -369,7 +369,7 @@ export class whatsappPluginTestService {
 
       const CONFIGURATION = {
         credentials: {
-          private_key: process.env.DIALOG_FLOW_PRIVATE_KEY.replace(/\n/g),
+          private_key: process.env.DIALOG_FLOW_PRIVATE_KEY.replace(/\n/g, '\n'),
           client_email: process.env.DIALOG_FLOW_CLIENT_EMAIL,
         },
       };
@@ -423,15 +423,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_oAsUdcap7cumQJg7
+      //appendnew_next_sd_A7uaysMPvl45Oyqe
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_oAsUdcap7cumQJg7',
+        'sd_A7uaysMPvl45Oyqe',
         spanInst,
-        'sd_oAsUdcap7cumQJg7'
+        'sd_A7uaysMPvl45Oyqe'
       );
     }
   }
