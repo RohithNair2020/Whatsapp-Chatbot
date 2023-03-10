@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_s9IzjDQH1Zht7816(bh, parentSpanInst);
+          bh = await this.sd_FDd76hvaL3WOtTee(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_s9IzjDQH1Zht7816(bh, parentSpanInst) {
+  async sd_FDd76hvaL3WOtTee(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_s9IzjDQH1Zht7816',
+      'sd_FDd76hvaL3WOtTee',
       parentSpanInst
     );
     try {
@@ -294,15 +294,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_s9IzjDQH1Zht7816
+      //appendnew_next_sd_FDd76hvaL3WOtTee
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_s9IzjDQH1Zht7816',
+        'sd_FDd76hvaL3WOtTee',
         spanInst,
-        'sd_s9IzjDQH1Zht7816'
+        'sd_FDd76hvaL3WOtTee'
       );
     }
   }
@@ -343,7 +343,7 @@ export class whatsappPluginTestService {
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_uhhFyVZFUzjriRjH(bh, parentSpanInst);
+      bh = await this.sd_UIRl5F6GXdoqe6nO(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -357,9 +357,9 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_uhhFyVZFUzjriRjH(bh, parentSpanInst) {
+  async sd_UIRl5F6GXdoqe6nO(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_uhhFyVZFUzjriRjH',
+      'sd_UIRl5F6GXdoqe6nO',
       parentSpanInst
     );
     try {
@@ -374,7 +374,13 @@ export class whatsappPluginTestService {
         },
       };
 
+      console.log('key :', CONFIGURATION.credentials.private_key);
       const sessionClient = new dialogflow.SessionsClient(CONFIGURATION);
+
+      const fulfill = () => {
+        console.log('fulfill Called');
+        return 'fullfill called';
+      };
 
       const detectIntent = async (languageCode, queryText, sessionId) => {
         let sessionPath = sessionClient.projectAgentSessionPath(
@@ -396,7 +402,11 @@ export class whatsappPluginTestService {
         console.log(responses, 'detect intent');
         const result = responses[0].queryResult;
 
-        return result.fulfillmentText;
+        if (result.fulfillmentText) {
+          return result.fulfillmentText;
+        } else {
+          return fulfill();
+        }
       };
 
       let languageCode = 'en';
@@ -413,15 +423,15 @@ export class whatsappPluginTestService {
 
       this.tracerService.sendData(spanInst, bh);
       bh = await this.sd_uKJFrS8pOGFdCtNb(bh, parentSpanInst);
-      //appendnew_next_sd_uhhFyVZFUzjriRjH
+      //appendnew_next_sd_UIRl5F6GXdoqe6nO
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_uhhFyVZFUzjriRjH',
+        'sd_UIRl5F6GXdoqe6nO',
         spanInst,
-        'sd_uhhFyVZFUzjriRjH'
+        'sd_UIRl5F6GXdoqe6nO'
       );
     }
   }
