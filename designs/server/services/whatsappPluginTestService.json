@@ -49,7 +49,7 @@
         "y": 140,
         "wires": [
             [
-                "sd_EC1ss10CkTlfPpkv"
+                "sd_fyfoZVKUDzXEeVLi"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -198,7 +198,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_BdX0Q9CpUbi7t36x"
+                "sd_Y9nY5Tw0mjzKwqpT"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -505,7 +505,7 @@
         "generated": true
     },
     {
-        "id": "sd_BdX0Q9CpUbi7t36x",
+        "id": "sd_Y9nY5Tw0mjzKwqpT",
         "type": "382050f4-c01a-4ec7-b38c-41e3b3963193",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -514,15 +514,14 @@
         "chatBotConfig": "sd_geKdBW6dIGTsZrB9",
         "sessionID": "bh.local.fromNumber",
         "intent": "bh.local.message",
-        "intentFulfillerRoute": "\"/full\"",
         "resultMapping": "bh.local.chatBotMessage",
-        "functionName": "sd_BdX0Q9CpUbi7t36x",
+        "functionName": "sd_Y9nY5Tw0mjzKwqpT",
         "category": "Messaging",
-        "x": 400,
+        "x": 385,
         "y": 40,
         "wires": [
             [
-                "sd_WzHLTLP16cBVQsG0"
+                "sd_2J7q7rGl7oPal6yp"
             ]
         ],
         "__ssdTypeInputs__": {
@@ -534,11 +533,6 @@
             "intent": {
                 "type": "bh.local",
                 "value": "message",
-                "constant": false
-            },
-            "intentFulfillerRoute": {
-                "type": "str",
-                "value": "/full",
                 "constant": false
             },
             "resultMapping": {
@@ -553,7 +547,7 @@
         "generated": true
     },
     {
-        "id": "sd_EC1ss10CkTlfPpkv",
+        "id": "sd_fyfoZVKUDzXEeVLi",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -562,9 +556,9 @@
         "config": "sd_xbGZ4uivBqNWybRv",
         "to": "\"919846312379\"",
         "message": "bh.input.params.message",
-        "functionName": "sd_EC1ss10CkTlfPpkv",
+        "functionName": "sd_fyfoZVKUDzXEeVLi",
         "category": "Messaging",
-        "x": 265,
+        "x": 260,
         "y": 140,
         "wires": [
             [
@@ -589,7 +583,7 @@
         "generated": true
     },
     {
-        "id": "sd_WzHLTLP16cBVQsG0",
+        "id": "sd_2J7q7rGl7oPal6yp",
         "type": "4b43b44d-37ab-b1e9-65ca-1dbd0a7c027a",
         "z": "SSD_SERVICE_ID_sd_Q0Ydn6Hb5bs5UUea",
         "viewType": "server",
@@ -598,9 +592,9 @@
         "config": "sd_xbGZ4uivBqNWybRv",
         "to": "bh.local.fromNumber",
         "message": "bh.local.chatBotMessage",
-        "functionName": "sd_WzHLTLP16cBVQsG0",
+        "functionName": "sd_2J7q7rGl7oPal6yp",
         "category": "Messaging",
-        "x": 540,
+        "x": 520,
         "y": 40,
         "wires": [
             []
