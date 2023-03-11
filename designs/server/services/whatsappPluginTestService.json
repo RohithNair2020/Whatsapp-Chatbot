@@ -561,7 +561,7 @@
         "name": "",
         "config": "sd_xbGZ4uivBqNWybRv",
         "to": "\"919846312379\"",
-        "message": "bh.input.params",
+        "message": "bh.input.params.message",
         "functionName": "sd_EC1ss10CkTlfPpkv",
         "category": "Messaging",
         "x": 265,
@@ -579,7 +579,7 @@
             },
             "message": {
                 "type": "bh.input",
-                "value": "params",
+                "value": "params.message",
                 "constant": false
             }
         },

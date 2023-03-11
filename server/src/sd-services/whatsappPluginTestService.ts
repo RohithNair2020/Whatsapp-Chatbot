@@ -289,9 +289,9 @@ export class whatsappPluginTestService {
         }
       };
 
-      console.log('whatsapp codegen', '919846312379', bh.input.params);
-      if (bh.input.params) {
-        sendMessage('919846312379', bh.input.params);
+      console.log('whatsapp codegen', '919846312379', bh.input.params.message);
+      if (bh.input.params.message) {
+        sendMessage('919846312379', bh.input.params.message);
       }
 
       this.tracerService.sendData(spanInst, bh);
