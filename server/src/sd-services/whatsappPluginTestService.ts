@@ -118,7 +118,7 @@ export class whatsappPluginTestService {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_luKXWng8eTfLkZUO(bh, parentSpanInst);
+          bh = await this.sd_EC1ss10CkTlfPpkv(bh, parentSpanInst);
           //appendnew_next_sd_BipCx5rPEANMM27h
         } catch (e) {
           return await this.errorHandler(bh, e, 'sd_BipCx5rPEANMM27h');
@@ -244,9 +244,9 @@ export class whatsappPluginTestService {
 
   //appendnew_flow_whatsappPluginTestService_start
 
-  async sd_luKXWng8eTfLkZUO(bh, parentSpanInst) {
+  async sd_EC1ss10CkTlfPpkv(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_luKXWng8eTfLkZUO',
+      'sd_EC1ss10CkTlfPpkv',
       parentSpanInst
     );
     try {
@@ -289,20 +289,22 @@ export class whatsappPluginTestService {
         }
       };
 
-      console.log('whatsapp codegen', '919846312379', bh.input.params.message);
-      sendMessage('919846312379', bh.input.params.message);
+      console.log('whatsapp codegen', '919846312379', bh.input.params);
+      if (bh.input.params) {
+        sendMessage('919846312379', bh.input.params);
+      }
 
       this.tracerService.sendData(spanInst, bh);
       await this.sd_jpKe77TaHm7qXpdh(bh, parentSpanInst);
-      //appendnew_next_sd_luKXWng8eTfLkZUO
+      //appendnew_next_sd_EC1ss10CkTlfPpkv
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_luKXWng8eTfLkZUO',
+        'sd_EC1ss10CkTlfPpkv',
         spanInst,
-        'sd_luKXWng8eTfLkZUO'
+        'sd_EC1ss10CkTlfPpkv'
       );
     }
   }
@@ -327,6 +329,7 @@ export class whatsappPluginTestService {
       const changes = bh.input?.input?.entry[0].changes;
       console.log(JSON.stringify(changes));
       bh.local.response = changes;
+      bh.local.message = null;
 
       if (
         changes &&
@@ -343,7 +346,7 @@ export class whatsappPluginTestService {
         );
       }
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_1Qxbfiy3dWpeDT4F(bh, parentSpanInst);
+      bh = await this.sd_BdX0Q9CpUbi7t36x(bh, parentSpanInst);
       //appendnew_next_sd_B6T2i43oLhRrHVbx
       return bh;
     } catch (e) {
@@ -357,9 +360,9 @@ export class whatsappPluginTestService {
     }
   }
 
-  async sd_1Qxbfiy3dWpeDT4F(bh, parentSpanInst) {
+  async sd_BdX0Q9CpUbi7t36x(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_1Qxbfiy3dWpeDT4F',
+      'sd_BdX0Q9CpUbi7t36x',
       parentSpanInst
     );
     try {
@@ -423,23 +426,23 @@ export class whatsappPluginTestService {
       }
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_HNsz3Wr1HwczVhnJ(bh, parentSpanInst);
-      //appendnew_next_sd_1Qxbfiy3dWpeDT4F
+      bh = await this.sd_WzHLTLP16cBVQsG0(bh, parentSpanInst);
+      //appendnew_next_sd_BdX0Q9CpUbi7t36x
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_1Qxbfiy3dWpeDT4F',
+        'sd_BdX0Q9CpUbi7t36x',
         spanInst,
-        'sd_1Qxbfiy3dWpeDT4F'
+        'sd_BdX0Q9CpUbi7t36x'
       );
     }
   }
 
-  async sd_HNsz3Wr1HwczVhnJ(bh, parentSpanInst) {
+  async sd_WzHLTLP16cBVQsG0(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_HNsz3Wr1HwczVhnJ',
+      'sd_WzHLTLP16cBVQsG0',
       parentSpanInst
     );
     try {
@@ -487,18 +490,20 @@ export class whatsappPluginTestService {
         bh.local.fromNumber,
         bh.local.chatBotMessage
       );
-      sendMessage(bh.local.fromNumber, bh.local.chatBotMessage);
+      if (bh.local.chatBotMessage) {
+        sendMessage(bh.local.fromNumber, bh.local.chatBotMessage);
+      }
 
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_HNsz3Wr1HwczVhnJ
+      //appendnew_next_sd_WzHLTLP16cBVQsG0
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_HNsz3Wr1HwczVhnJ',
+        'sd_WzHLTLP16cBVQsG0',
         spanInst,
-        'sd_HNsz3Wr1HwczVhnJ'
+        'sd_WzHLTLP16cBVQsG0'
       );
     }
   }
